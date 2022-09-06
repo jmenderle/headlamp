@@ -1,5 +1,6 @@
 backend/headlamp-server
 backend/headlamp-server.exe
+charts/headlamp/values.yaml
 backend/tools
 app/electron/src/*
 docs/development/storybook/
