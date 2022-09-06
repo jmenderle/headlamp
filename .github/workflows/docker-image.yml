@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/jmenderle/headlamp:$(date +%s)
-        docker tag ghcr.io/jmenderle/headlamp:$(date +%s) ghcr.io/jmenderle/headlamp:latest
-        docker push ghcr.io/jmenderle/headlamp:$(date +%s) ghcr.io/jmenderle/headlamp:latest
+        date=$(date +%s)
+        docker build . --file Dockerfile --tag ghcr.io/jmenderle/headlamp:${date}
+        docker tag ghcr.io/jmenderle/headlamp:${date} ghcr.io/jmenderle/headlamp:latest
+        docker push ghcr.io/jmenderle/headlamp:${date}
+        docker push ghcr.io/jmenderle/headlamp:latest
