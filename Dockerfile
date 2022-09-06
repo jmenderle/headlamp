@@ -1,4 +1,4 @@
-ARG IMAGE_BASE=alpine:3.15.4
+ARG IMAGE_BASE=alpine:latest
 FROM $IMAGE_BASE as base-build
 
 ENV GOPATH=/go \
@@ -6,7 +6,7 @@ ENV GOPATH=/go \
 		GO111MODULE=on
 
 RUN apk update && \
-	apk add git nodejs npm go ca-certificates make musl-dev bash icu-data
+	apk add git nodejs npm go ca-certificates make musl-dev bash icu-data curl
 
 FROM base-build AS backend
 
